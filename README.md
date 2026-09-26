@@ -38,3 +38,10 @@ Returns the estimated frequency for `item`. The returned value is an integer and
 ### `merge(other)`
 
 Adds all counters from `other` into this sketch. Both sketches must have the same `width`, `depth`, and `seed`.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
