@@ -1,6 +1,6 @@
 [project]
 name = "count-min-sketch"
-version = "0.1.1"
+version = "0.1.2"
 description = "Estimates item frequencies in a data stream using multiple hash functions."
 requires-python = ">=3.10"
 dependencies = []
